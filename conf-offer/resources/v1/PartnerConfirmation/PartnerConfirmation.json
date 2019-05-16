@@ -1,0 +1,21 @@
+{
+  "name": "PartnerConfirmation",
+  "description": "Approved Conference Offers are confirmed to Partners.  This is a good example of Data Integration, based on Multiple Data Sources, with a Virtual Foreign Key across them defined in the Schema screen.",
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "main",
+  "entity": "ConferenceOffers",
+  "isCollection": true,
+  "isCombined": false,
+  "filter": null,
+  "order": null,
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "attribute": "name",
+      "alias": "name",
+      "description": null,
+      "isKey": false
+    }
+  ]
+}

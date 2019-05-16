@@ -1,0 +1,1091 @@
+{
+  "{f}api.json": {
+    "name": "Northwind",
+    "urlFragment": "nw",
+    "comments": "Simple integration demo - B2B order processing.\nExplore Resource, Rules.  See Quick Start for a Tour.\nTest with the REST Lab or Data Explorer.",
+    "isEnabled": true,
+    "authProviderName": "Built-in authentication"
+  },
+  "{f}exportoptions.json": {
+    "passwordStyle": "PLAINTEXT",
+    "apiOptionStyle": "SKIP_DEFAULT",
+    "authTokenStyle": "SKIP_AUTO",
+    "skipUrlFragmentWrapping": true,
+    "libraryStyle": "EMIT_ALL",
+    "schemaCacheStyle": "DO_NOT_EMIT"
+  },
+  "{f}apioptions.json": {
+    "Allow Swagger without authentication": {
+      "dataType": "boolean",
+      "value": true,
+      "defaultValue": false
+    },
+    "Enable HTTP Basic Authentication": {
+      "dataType": "boolean",
+      "value": false,
+      "defaultValue": true
+    },
+    "Permit Authorization parameter in URL": {
+      "dataType": "boolean",
+      "value": true,
+      "defaultValue": false
+    },
+    "Tech docs URL": {
+      "dataType": "string",
+      "value": "https://docops.ca.com/ca-live-api-creator/5-1/en/tutorials-and-samples/northwind-api-sample",
+      "defaultValue": null
+    }
+  },
+  "{d}connections": {
+    "{f}ReadMe.md": "This folder contains definitions for connections\n"
+  },
+  "{d}listeners": {
+    "{f}ReadMe.md": "This folder contains definitions for listeners\n"
+  },
+  "{d}custom_endpoints": {
+    "{f}ReadMe.md": "This folder contains definitions for custom_endpoints\n"
+  },
+  "{f}relationships.json": [
+    {
+      "parentEntity": "nw:Categories",
+      "childEntity": "nw:Products",
+      "roleToParent": "Categories",
+      "roleToChild": "Products_List",
+      "deleteRule": "Cascade",
+      "updateRule": "No Action",
+      "parentColumns": [
+        "CategoryID"
+      ],
+      "childColumns": [
+        "CategoryID"
+      ]
+    },
+    {
+      "parentEntity": "nw:CustomerDemographics",
+      "childEntity": "nw:CustomerCustomerDemo",
+      "roleToParent": "CustomerDemographics",
+      "roleToChild": "CustomerCustomerDemo_List",
+      "deleteRule": "Cascade",
+      "updateRule": "No Action",
+      "parentColumns": [
+        "CustomerTypeID"
+      ],
+      "childColumns": [
+        "CustomerTypeID"
+      ]
+    },
+    {
+      "parentEntity": "nw:Customers",
+      "childEntity": "nw:CustomerCustomerDemo",
+      "roleToParent": "Customers",
+      "roleToChild": "CustomerCustomerDemo_List",
+      "deleteRule": "Cascade",
+      "updateRule": "No Action",
+      "parentColumns": [
+        "CustomerID"
+      ],
+      "childColumns": [
+        "CustomerID"
+      ]
+    },
+    {
+      "parentEntity": "nw:Customers",
+      "childEntity": "nw:Orders",
+      "roleToParent": "Customers",
+      "roleToChild": "Orders",
+      "deleteRule": "Cascade",
+      "updateRule": "No Action",
+      "parentColumns": [
+        "CustomerID"
+      ],
+      "childColumns": [
+        "CustomerID"
+      ]
+    },
+    {
+      "parentEntity": "nw:Employees",
+      "childEntity": "nw:EmployeeRaises",
+      "roleToParent": "Employees",
+      "roleToChild": "EmployeeRaises_List",
+      "deleteRule": "Cascade",
+      "updateRule": "No Action",
+      "parentColumns": [
+        "EmployeeID"
+      ],
+      "childColumns": [
+        "EmployeeID"
+      ]
+    },
+    {
+      "parentEntity": "nw:Employees",
+      "childEntity": "nw:Employees",
+      "roleToParent": "Employees_via_ReportsTo",
+      "roleToChild": "Employees_List_via_ReportsTo",
+      "deleteRule": "Set NULL",
+      "updateRule": "No Action",
+      "parentColumns": [
+        "EmployeeID"
+      ],
+      "childColumns": [
+        "ReportsTo"
+      ]
+    },
+    {
+      "parentEntity": "nw:Employees",
+      "childEntity": "nw:EmployeeTerritories",
+      "roleToParent": "Employees",
+      "roleToChild": "EmployeeTerritories_List",
+      "deleteRule": "Cascade",
+      "updateRule": "No Action",
+      "parentColumns": [
+        "EmployeeID"
+      ],
+      "childColumns": [
+        "EmployeeID"
+      ]
+    },
+    {
+      "parentEntity": "nw:Employees",
+      "childEntity": "nw:Orders",
+      "roleToParent": "Employees",
+      "roleToChild": "Orders_List",
+      "deleteRule": "Cascade",
+      "updateRule": "No Action",
+      "parentColumns": [
+        "EmployeeID"
+      ],
+      "childColumns": [
+        "EmployeeID"
+      ]
+    },
+    {
+      "parentEntity": "nw:Orders",
+      "childEntity": "nw:Order Details",
+      "roleToParent": "Orders",
+      "roleToChild": "OrderDetails",
+      "deleteRule": "Cascade",
+      "updateRule": "No Action",
+      "parentColumns": [
+        "OrderID"
+      ],
+      "childColumns": [
+        "OrderID"
+      ]
+    },
+    {
+      "parentEntity": "nw:Products",
+      "childEntity": "nw:Order Details",
+      "roleToParent": "Products",
+      "roleToChild": "Order$0020Details_List",
+      "deleteRule": "Cascade",
+      "updateRule": "No Action",
+      "parentColumns": [
+        "ProductID"
+      ],
+      "childColumns": [
+        "ProductID"
+      ]
+    },
+    {
+      "parentEntity": "nw:Region",
+      "childEntity": "nw:Territories",
+      "roleToParent": "Region",
+      "roleToChild": "Territories_List",
+      "deleteRule": "Cascade",
+      "updateRule": "No Action",
+      "parentColumns": [
+        "RegionID"
+      ],
+      "childColumns": [
+        "RegionID"
+      ]
+    },
+    {
+      "parentEntity": "nw:Shippers",
+      "childEntity": "nw:Orders",
+      "roleToParent": "Shippers",
+      "roleToChild": "Orders_List",
+      "deleteRule": "Cascade",
+      "updateRule": "No Action",
+      "parentColumns": [
+        "ShipperID"
+      ],
+      "childColumns": [
+        "ShipVia"
+      ]
+    },
+    {
+      "parentEntity": "nw:Shippers",
+      "childEntity": "promos:promotions",
+      "roleToParent": "Shipper",
+      "roleToChild": "Promotions_List",
+      "deleteRule": "No Action",
+      "updateRule": "No Action",
+      "parentColumns": [
+        "ShipperID"
+      ],
+      "childColumns": [
+        "SupplierID"
+      ]
+    },
+    {
+      "parentEntity": "nw:Suppliers",
+      "childEntity": "nw:Products",
+      "roleToParent": "Suppliers",
+      "roleToChild": "Products_List",
+      "deleteRule": "Cascade",
+      "updateRule": "No Action",
+      "parentColumns": [
+        "SupplierID"
+      ],
+      "childColumns": [
+        "SupplierID"
+      ]
+    },
+    {
+      "parentEntity": "nw:Territories",
+      "childEntity": "nw:EmployeeTerritories",
+      "roleToParent": "Territories",
+      "roleToChild": "EmployeeTerritories_List",
+      "deleteRule": "Cascade",
+      "updateRule": "No Action",
+      "parentColumns": [
+        "TerritoryID"
+      ],
+      "childColumns": [
+        "TerritoryID"
+      ]
+    }
+  ],
+  "{d}data_sources": {
+    "{f}ReadMe.md": "This folder contains definitions for data sources\n",
+    "{f}NORTHWIND$0020-$0020NORTHWIND.json": {
+      "name": "NORTHWIND - NORTHWIND",
+      "prefix": "nw",
+      "title": null,
+      "databaseType": "DERBY",
+      "comments": "Created using Connect Wizard",
+      "isActive": true,
+      "isLogErrors": false,
+      "isSchemaEditable": false,
+      "isSupportBoolean": false,
+      "isReadOnly": false,
+      "useJNDIDataSource": false,
+      "url": "jdbc:derby:Northwind",
+      "catalog": null,
+      "schema": "NORTHWIND",
+      "username": "NORTHWIND",
+      "password": null,
+      "maximumConnections": 20,
+      "tableExcludes": null,
+      "tableIncludes": null,
+      "procedureExcludes": null,
+      "procedureIncludes": null,
+      "nonPersistentAttributes": {
+      },
+      "tableInfos": {
+      },
+      "viewInfos": {
+      },
+      "procedureInfos": {
+      }
+    },
+    "{f}promotions.json": {
+      "name": "promotions",
+      "prefix": "promos",
+      "title": "Apache Derby (also known as Oracle JavaDB)",
+      "databaseType": "DERBY",
+      "comments": null,
+      "isActive": true,
+      "isLogErrors": false,
+      "isSchemaEditable": false,
+      "isSupportBoolean": false,
+      "isReadOnly": false,
+      "useJNDIDataSource": false,
+      "url": "jdbc:derby:Finance",
+      "catalog": null,
+      "schema": "Finance",
+      "username": "Finance",
+      "password": null,
+      "maximumConnections": 20,
+      "tableExcludes": null,
+      "tableIncludes": null,
+      "procedureExcludes": null,
+      "procedureIncludes": null,
+      "nonPersistentAttributes": {
+      },
+      "tableInfos": {
+      },
+      "viewInfos": {
+      },
+      "procedureInfos": {
+      }
+    }
+  },
+  "{d}filters": {
+    "{f}ReadMe.md": "This folder contains definitions for filters\n"
+  },
+  "{d}functions": {
+    "{f}ReadMe.md": "This folder contains definitions for functions\n"
+  },
+  "{d}libraries": {
+    "{f}ReadMe.md": "This folder contains definitions for libraries and whether they are used.\n",
+    "{f}SystemLibraryUsage.json": [
+      "Moment.js (with Locales)"
+    ]
+  },
+  "{d}request_events": {
+    "{f}ReadMe.md": "This folder contains definitions for request events\n"
+  },
+  "{d}resources": {
+    "{f}ReadMe.md": "This folder contains definitions for resources\n",
+    "{f}apiversions.json": {
+      "v1": {
+        "name": "v1",
+        "comments": null
+      }
+    },
+    "{d}v1": {
+      "{d}PartnerOrder": {
+        "{f}PartnerOrder.json": {
+          "name": "PartnerOrder",
+          "description": "Create order by posting this from Partner,\nwith attribute aliases for \"Mapping/transformation logic\" (i.e., API independent of schema).\n\nAlso see Request Events, which inserts metadata tags for LOOKUP of ProductNumbers, given a ProductName.  The \"Part of Defined Key\" property identifies the fields used for the LOOKUP - see the Subresources Product and Shipper.\n\nPerhaps initiated by code, web hook, UI.... or for our testing, RestLab.",
+          "siblingRank": 100,
+          "resourceType": "TableBased",
+          "prefix": "nw",
+          "entity": "Orders",
+          "isCollection": true,
+          "isCombined": false,
+          "filter": null,
+          "order": null,
+          "useSchemaAttributes": false,
+          "attributes": [
+            {
+              "attribute": "CustomerID",
+              "alias": "CustomerNumber",
+              "description": null,
+              "isKey": false
+            },
+            {
+              "attribute": "OrderID",
+              "alias": "OrderNumber",
+              "description": "posey",
+              "isKey": false
+            }
+          ]
+        },
+        "{f}extended_properties.js": "{\n  \"InsertActions\": [\n    {\n      \"path\": \"$..Product\",\n      \"insertActions\": \"LOOKUP\"\n    },\n    {\n      \"path\": \"Shipper\",\n      \"insertActions\": \"LOOKUP\"\n    }\n  ]\n}\n",
+        "{f}PartnerOrder.js": null,
+        "{d}Items": {
+          "{f}Items.json": {
+            "name": "Items",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "nw",
+            "entity": "Order Details",
+            "join": "\"OrderID\" = [OrderID]",
+            "isCollection": true,
+            "isCombined": false,
+            "filter": null,
+            "order": null,
+            "useSchemaAttributes": false,
+            "attributes": [
+              {
+                "attribute": "ProductID",
+                "alias": "ProductNumber",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "attribute": "Quantity",
+                "alias": "Quantity",
+                "description": null,
+                "isKey": false
+              }
+            ]
+          },
+          "{f}extended_properties.js": null,
+          "{f}Items.js": null,
+          "{d}Product": {
+            "{f}Product.json": {
+              "name": "Product",
+              "description": null,
+              "siblingRank": 100,
+              "resourceType": "TableBased",
+              "prefix": "nw",
+              "entity": "Products",
+              "join": "\"ProductID\" = [ProductID]",
+              "isCollection": false,
+              "isCombined": false,
+              "filter": null,
+              "order": null,
+              "useSchemaAttributes": false,
+              "attributes": [
+                {
+                  "attribute": "ProductName",
+                  "alias": "ProductName",
+                  "description": null,
+                  "isKey": true
+                }
+              ]
+            },
+            "{f}extended_properties.js": null,
+            "{f}Product.js": null
+          }
+        },
+        "{d}Shipper": {
+          "{f}Shipper.json": {
+            "name": "Shipper",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "nw",
+            "entity": "Shippers",
+            "join": "\"ShipperID\" = [ShipVia]",
+            "isCollection": false,
+            "isCombined": false,
+            "filter": null,
+            "order": null,
+            "useSchemaAttributes": false,
+            "attributes": [
+              {
+                "attribute": "CompanyName",
+                "alias": "CompanyName",
+                "description": null,
+                "isKey": true
+              }
+            ]
+          },
+          "{f}extended_properties.js": null,
+          "{f}Shipper.js": null
+        }
+      },
+      "{d}ShipperAPIDef": {
+        "{f}ShipperAPIDef.json": {
+          "name": "ShipperAPIDef",
+          "description": "Used by Orders.ShipperAlert to transform Orders row, to alert Shipper.\n\nObserve Resources are useful for defining Mapping/transformation logic (i.e.,\n * API independent of schema).which columns / aliases,\n * What related objects, etc.",
+          "siblingRank": 100,
+          "resourceType": "TableBased",
+          "prefix": "nw",
+          "entity": "Orders",
+          "isCollection": true,
+          "isCombined": false,
+          "filter": null,
+          "order": null,
+          "useSchemaAttributes": false,
+          "attributes": [
+            {
+              "attribute": "OrderID",
+              "alias": "OrderNumber",
+              "description": null,
+              "isKey": false
+            },
+            {
+              "attribute": "RequiredDate",
+              "alias": "RequiredDate",
+              "description": null,
+              "isKey": false
+            },
+            {
+              "attribute": "ShipAddress",
+              "alias": "ShipAddress",
+              "description": null,
+              "isKey": false
+            },
+            {
+              "attribute": "ShipCity",
+              "alias": "ShipCity",
+              "description": null,
+              "isKey": false
+            },
+            {
+              "attribute": "ShipCountry",
+              "alias": "ShipCountry",
+              "description": null,
+              "isKey": false
+            },
+            {
+              "attribute": "ShipName",
+              "alias": "ShipName",
+              "description": null,
+              "isKey": false
+            },
+            {
+              "attribute": "ShipPostalCode",
+              "alias": "ShipPostalCode",
+              "description": null,
+              "isKey": false
+            },
+            {
+              "attribute": "ShipRegion",
+              "alias": "ShipRegion",
+              "description": null,
+              "isKey": false
+            }
+          ]
+        },
+        "{f}extended_properties.js": null,
+        "{f}ShipperAPIDef.js": null,
+        "{d}OrderDetails_List": {
+          "{f}OrderDetails_List.json": {
+            "name": "OrderDetails_List",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "nw",
+            "entity": "Order Details",
+            "join": "\"OrderID\" = [OrderID]",
+            "isCollection": true,
+            "isCombined": false,
+            "filter": null,
+            "order": null,
+            "useSchemaAttributes": false,
+            "attributes": [
+              {
+                "attribute": "Amount",
+                "alias": "Amount",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "attribute": "Discount",
+                "alias": "Discount",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "attribute": "isHealthy",
+                "alias": "isHealthy",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "attribute": "OrderID",
+                "alias": "OrderID",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "attribute": "ProductID",
+                "alias": "ProductID",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "attribute": "Quantity",
+                "alias": "Quantity",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "attribute": "UnitPrice",
+                "alias": "UnitPrice",
+                "description": null,
+                "isKey": false
+              }
+            ]
+          },
+          "{f}extended_properties.js": null,
+          "{f}OrderDetails_List.js": null,
+          "{d}ProductForItem": {
+            "{f}ProductForItem.json": {
+              "name": "ProductForItem",
+              "description": null,
+              "siblingRank": 100,
+              "resourceType": "TableBased",
+              "prefix": "nw",
+              "entity": "Products",
+              "join": "\"ProductID\" = [ProductID]",
+              "isCollection": false,
+              "isCombined": true,
+              "filter": null,
+              "order": null,
+              "useSchemaAttributes": false,
+              "attributes": [
+                {
+                  "attribute": "ProductName",
+                  "alias": "ProductName",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "attribute": "UnitPrice",
+                  "alias": "ProductPrice",
+                  "description": null,
+                  "isKey": false
+                }
+              ]
+            },
+            "{f}extended_properties.js": null,
+            "{f}ProductForItem.js": null
+          }
+        },
+        "{d}ShipperForOrder": {
+          "{f}ShipperForOrder.json": {
+            "name": "ShipperForOrder",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "nw",
+            "entity": "Shippers",
+            "join": "\"ShipperID\" = [\"ShipVia\"]",
+            "isCollection": false,
+            "isCombined": false,
+            "filter": null,
+            "order": null,
+            "useSchemaAttributes": true
+          },
+          "{f}extended_properties.js": null,
+          "{f}ShipperForOrder.js": null,
+          "{d}Promotions": {
+            "{f}Promotions.json": {
+              "name": "Promotions",
+              "description": null,
+              "siblingRank": 100,
+              "resourceType": "TableBased",
+              "prefix": "promos",
+              "entity": "promotions",
+              "join": "\"SupplierID\" = [\"ShipperID\"]",
+              "isCollection": false,
+              "isCombined": false,
+              "filter": null,
+              "order": null,
+              "useSchemaAttributes": true
+            },
+            "{f}extended_properties.js": null,
+            "{f}Promotions.js": null
+          }
+        }
+      }
+    }
+  },
+  "{d}rules": {
+    "{f}ReadMe.md": "This folder contains definitions for rules\n",
+    "{d}nw": {
+      "{f}ReadMe.md": "Rules for entities in prefix nw",
+      "{d}Customers": {
+        "{f}sum_Balance.json": {
+          "name": "sum_Balance",
+          "entity": "Customers",
+          "isActive": true,
+          "ruleType": "sum",
+          "attribute": "Balance",
+          "roleToChildren": "Orders",
+          "childAttribute": "AmountTotal",
+          "qualification": "null === ShippedDate",
+          "isJIT": false,
+          "isAutoTitle": false,
+          "title": "Balance = sum(Orders.AmountTotal where unshipped)",
+          "comments": "adjust the balance to be the sum(Orders_List.AmountTotal) for unshipped orders\nAdjusts Balance by *reacting* to changes in Orders_List.AmountTotal,\nincluding other changes noted in Table/Column help.",
+          "topics": [
+            "Check Credit"
+          ]
+        },
+        "{f}validation_BalanceCreditLimit.json": {
+          "name": "validation_BalanceCreditLimit",
+          "entity": "Customers",
+          "isActive": true,
+          "ruleType": "validation",
+          "codeType": "JavaScript",
+          "errorMessage": "Transaction cannot be completed - Balance ({Balance|#,##0.00}) exceeds Credit Limit ({CreditLimit|#,##0.00})",
+          "problemAttributes": [
+          ],
+          "isAutoTitle": false,
+          "title": "Validation: Balance <= CreditLimit",
+          "comments": "Observe Error message insertion points {}",
+          "topics": [
+            "Check Credit"
+          ]
+        },
+        "{f}validation_BalanceCreditLimit.js": "return row.Balance <= row.CreditLimit;\n"
+      },
+      "{d}Order$0020Details": {
+        "{f}formula_Amount.json": {
+          "name": "formula_Amount",
+          "entity": "Order Details",
+          "isActive": true,
+          "ruleType": "formula",
+          "attribute": "Amount",
+          "codeType": "JavaScript",
+          "isJIT": false,
+          "isAutoTitle": false,
+          "title": "Amount = Quantity * UnitPrice;  // discounted",
+          "comments": "Amount as Quantity * UnitPrice -- (JavaScript snippet)\nJavaScript is used to express logic,\nproviding access to libraries for date arithmetic (etc.), or your own.\nReactive logic recomputes Amount in response to changes Quantity, Price (and, per logic chaining, the ProductId)",
+          "topics": [
+            "Check Credit"
+          ]
+        },
+        "{f}formula_Amount.js": "var amount = row.Quantity * row.UnitPrice;  // row is the OrderDetails row\nif (row.Quantity !== 0) {\n    amount = amount * (100 - 100*row.Discount) / 100;\n}\nreturn amount;\n",
+        "{f}parentCopy_UnitPrice.json": {
+          "name": "parentCopy_UnitPrice",
+          "entity": "Order Details",
+          "isActive": true,
+          "ruleType": "parentCopy",
+          "attribute": "UnitPrice",
+          "roleToParent": "Products",
+          "parentAttribute": "UnitPrice",
+          "isAutoTitle": true,
+          "title": "UnitPrice = parentcopy(Products.UnitPrice)",
+          "comments": "copy price from product, unaffected by price changes\nObtain the price from the product.\nCopy means subsequent changes to Products.UnitPrice do not affect existing Order Details.\n  You could also use a formula for row.Products.UnitPrice if you *do* want to cascade changes.\n\nYou can change the Rule name (at the top) to be more friendly, or specify a more suitable role name, such as myProducts using the schema page.",
+          "topics": [
+            "Check Credit"
+          ]
+        }
+      },
+      "{d}Orders": {
+        "{f}event_xgmeb.json": {
+          "name": "event_xgmeb",
+          "entity": "Orders",
+          "isActive": true,
+          "ruleType": "event",
+          "asynchronous": false,
+          "appliesTo": {
+            "insert": true,
+            "update": true,
+            "delete": true
+          },
+          "codeType": "JavaScript",
+          "isAutoTitle": false,
+          "title": "Shipper Alert",
+          "comments": null,
+          "topics": [
+            "Shipper Alert"
+          ]
+        },
+        "{f}event_xgmeb.js": "var shipper = row.Shippers;     // object model (row) provides accessors to related objects\nif (shipper !== null && shipper.webHookURL !== null) {\n    var msg = logicContext.transformCurrentRow(\"ShipperAPIDef\");                  // ShipperAPIDef resource: transformation\n    SysUtility.restPost(shipper.webHookURL, {}, ConstantsLib.supplierAuth, msg);  // find with Control-Space, or Examples (above)\n}\n",
+        "{f}sum_AmountTotal.json": {
+          "name": "sum_AmountTotal",
+          "entity": "Orders",
+          "isActive": true,
+          "ruleType": "sum",
+          "attribute": "AmountTotal",
+          "roleToChildren": "OrderDetails",
+          "childAttribute": "Amount",
+          "qualification": null,
+          "isJIT": false,
+          "isAutoTitle": true,
+          "title": "AmountTotal = sum(OrderDetails.Amount)",
+          "comments": "Adjust the AmountTotal to be the sum(Order$0020Details_List.Amount)\nObserve how simple rules chain to solve complex, multi-table transactions.",
+          "topics": [
+            "Check Credit"
+          ]
+        }
+      }
+    },
+    "{d}promos": {
+      "{f}ReadMe.md": "Rules for entities in prefix promos"
+    }
+  },
+  "{d}security": {
+    "{f}ReadMe.md": "This folder contains definitions for security\n",
+    "{d}roles": {
+      "{f}ReadMe.md": "This contains Roles defined for the project.\nRoles define which server features are available and what the permissions\non each feature is enabled.\n",
+      "{f}API$0020Documentation.json": {
+        "name": "API Documentation",
+        "description": "This role is special and is used when generating OpenAPI(Swagger) documentation. It is recognized by the name special name 'API Documentation' and used only for documentation calls.\n Any Resources, Tables, Views, Procedures etc. that are defined and enabled by this role are used to generate the OpenAPI(Swagger) documentation.\n If this role is assigned to a user it will NOT be used for execution permissions.\n If this role is removed or otherwise unavailable, the Swagger/OpenAPI documentation will be nothing more that a name and version.",
+        "defaultTablePermission": "A",
+        "defaultViewPermission": "R",
+        "defaultFunctionPermission": "X",
+        "globals": {
+        },
+        "apiVisibility": {
+          "table": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "view": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "resource": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "procedure": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "metatable": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "function": {
+            "isRestricted": false,
+            "restrictedTo": null
+          }
+        },
+        "entityPermission": {
+        },
+        "functionPermission": {
+        }
+      },
+      "{f}Authorized$0020per$0020region.json": {
+        "name": "Authorized per region",
+        "description": "Click the Permissions tab.",
+        "defaultTablePermission": "A",
+        "defaultViewPermission": "R",
+        "defaultFunctionPermission": "X",
+        "globals": {
+        },
+        "apiVisibility": {
+          "table": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "view": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "resource": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "procedure": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "metatable": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "function": {
+            "isRestricted": true,
+            "restrictedTo": [
+            ]
+          }
+        },
+        "entityPermission": {
+          "My Regions Customer": {
+            "entity": "nw:Customers",
+            "description": "Illustrates row-level security - see only customers in 'my' UserRegion.\n\nUserRegion defined in the Auth Tokens (for this example), or Users (in normal cases)",
+            "accessLevels": [
+              "ALL"
+            ],
+            "rowFilter": "\"Region\" = '@{UserRegion}'",
+            "columnFilter": {
+              "isRestricted": false,
+              "restrictedTo": null
+            }
+          }
+        },
+        "functionPermission": {
+        }
+      },
+      "{f}Full$0020access.json": {
+        "name": "Full access",
+        "description": "Full access to everything in this project",
+        "defaultTablePermission": "A",
+        "defaultViewPermission": "R",
+        "defaultFunctionPermission": "X",
+        "globals": {
+        },
+        "apiVisibility": {
+          "table": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "view": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "resource": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "procedure": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "metatable": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "function": {
+            "isRestricted": false,
+            "restrictedTo": null
+          }
+        },
+        "entityPermission": {
+        },
+        "functionPermission": {
+        }
+      },
+      "{f}Read$0020only.json": {
+        "name": "Read only",
+        "description": "Read-only access to everything in this project",
+        "defaultTablePermission": "R",
+        "defaultViewPermission": "R",
+        "defaultFunctionPermission": "X",
+        "globals": {
+        },
+        "apiVisibility": {
+          "table": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "view": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "resource": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "procedure": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "metatable": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "function": {
+            "isRestricted": false,
+            "restrictedTo": null
+          }
+        },
+        "entityPermission": {
+        },
+        "functionPermission": {
+        }
+      }
+    },
+    "{d}authtokens": {
+      "{f}ReadMe.md": "This contains statically defined API Keys (Auth Tokens) for this project.\nDynamically created keys (using @authentication service) are NOT exported.\n",
+      "{f}Admin$0020key.json": {
+        "name": "Admin key",
+        "authToken": "vWbThI0QoUuUyAUMzsTM",
+        "description": "Created as part of this API. Feel free to change or delete this auth token.",
+        "userIdentifier": null,
+        "isActive": true,
+        "expiration": null,
+        "logging": "*=FINE",
+        "roles": [
+          "Full access"
+        ],
+        "globals": {
+        }
+      },
+      "{f}Region$0020Customers.json": {
+        "name": "Region Customers",
+        "authToken": "RegCusts",
+        "description": "Use this key in the REST Lab, and observe that Customers returns fewer rows.\n\nThis is due to the defined Role, which uses the Global variable defined on the Details tab.",
+        "userIdentifier": null,
+        "isActive": true,
+        "expiration": null,
+        "logging": "*=FINE",
+        "roles": [
+          "Authorized per region"
+        ],
+        "globals": {
+          "UserRegion": "OR"
+        }
+      }
+    },
+    "{d}users": {
+      "{f}ReadMe.md": "This contains Users defined for the system when using the default authentication provider.\nWhile this can be used for production systems, typically the authentication provider is LDAP\nor some other mechanism.\n",
+      "{f}admin.json": {
+        "name": "admin",
+        "fullname": "Admin Account with full access",
+        "email": null,
+        "isActive": true,
+        "comments": null,
+        "keyLifetimeSeconds": null,
+        "passwordHash": "3TDApa+FGCwyUc4xcCSvRueTHsQowBWJuvt/s8YSHx1/bWHyvMjEtZeBamMXAjtP+4L3+lHHbozt0vqb3BRHBw==",
+        "passwordSalt": "30hSxiYZcbzJG1VVNP3QdkNP3PIBLchLBRyc51a2",
+        "roles": [
+          "Full access"
+        ],
+        "globals": {
+        }
+      },
+      "{f}demo.json": {
+        "name": "demo",
+        "fullname": "Demo Account with full access",
+        "email": null,
+        "isActive": true,
+        "comments": null,
+        "keyLifetimeSeconds": null,
+        "passwordHash": "fu8SuZPhhjwPXWpPzhZJdBuy2HBV7P1r1/6qkyEBGIF8DClKSBj5wThpn8GlWQ5GJDu+cjlCevwWDmUt01OcyQ==",
+        "passwordSalt": "lxS6bezlVEbkML32+qw1fMOzN8EhTKd/PNZ2VByC",
+        "roles": [
+          "Full access"
+        ],
+        "globals": {
+        }
+      },
+      "{f}guest.json": {
+        "name": "guest",
+        "fullname": "Guest Account with read-only access",
+        "email": null,
+        "isActive": true,
+        "comments": null,
+        "keyLifetimeSeconds": null,
+        "passwordHash": "xqjF8502YQUTt6jT5jelCj52zxw2Yzvi4n0dyqbtvcvehOdjeu3YayMUZBCHZhKDsVXNcxfoTCM/N46GZyENLg==",
+        "passwordSalt": "pWfi10tZWcmfWFqRojpiLzy+Grfffj2GAPb3+d8e",
+        "roles": [
+          "Read only"
+        ],
+        "globals": {
+        }
+      },
+      "{f}region.json": {
+        "name": "region",
+        "fullname": "User with specified region",
+        "email": null,
+        "isActive": true,
+        "comments": null,
+        "keyLifetimeSeconds": null,
+        "passwordHash": "ymw8M9MOrz2jwjZGiu8T7IUOv5NAtxthu/CNUWRWltELTgbGY1bJ/MWdjrzIrkUpHlXMP+qmBJc84q1BtoTzpg==",
+        "passwordSalt": "zXFH3Uwdim9r3YGzl8NhnQa1CUdgkLx5/fT98w6u",
+        "roles": [
+          "Authorized per region"
+        ],
+        "globals": {
+          "UserRegion": "OR"
+        }
+      }
+    }
+  },
+  "{d}sorts": {
+    "{f}ReadMe.md": "This folder contains definitions for sorts\n"
+  },
+  "{d}timers": {
+    "{f}ReadMe.md": "This folder contains definitions for timers\n"
+  },
+  "{d}topics": {
+    "{f}ReadMe.md": "This folder contains definitions for topics\n",
+    "{f}Check$0020Credit.json": {
+      "name": "Check Credit",
+      "color": "#fffe16",
+      "summary": "CreditLimit > Balance (rollup of unshipped Order AmountTotals)"
+    },
+    "{f}Check$0020Credit.html": "<p>5 rules == several hundred lines of code, and transparent to business users, to enforce business view...</p>\n\n<ul>\n\t<li>Balance must be less than Credit Limit</li>\n\t<li>Balance is sum of unshipped PurchaseOrder AmountTotals</li>\n\t<li>PurchaseOrder AmountTotal is sum of Order Detail Amounts</li>\n\t<li>Order Detail Amount is discounted Quantity * Price (from the Product)</li>\n</ul>\n\n<p>Multi-story Automation: rules conceived for Place Order also address these User Stories</p>\n\n<ul>\n\t<li>Delete Order - the balance is reduced</li>\n\t<li>Ship&nbsp;Order - the balance is reduced</li>\n\t<li>UnShip&nbsp;the Order - balance is increased</li>\n\t<li>Reassign Order to a new customer - new customer balance increased, old balance decreased (for unshipped Orders)</li>\n\t<li>Reassign a Line Item to a different Product - adjusts the order&#39;s amount total</li>\n\t<li>Add a Line Item</li>\n\t<li>Delete a Line Item</li>\n\t<li>Change Line Item Quantity</li>\n\t<li>Do&nbsp;<em>multiple</em>&nbsp;of these, in combination (&quot;no, I menat 2 hammers, not 1 shovel&quot;)</li>\n</ul>\n",
+    "{f}Shipper$0020Alert.json": {
+      "name": "Shipper Alert",
+      "color": "#9baddc",
+      "summary": "Alert Shipper by posting to designed URL in agreed-upon format"
+    },
+    "{f}Shipper$0020Alert.html": null
+  },
+  "{d}applications": {
+    "{f}ReadMe.md": "This folder contains definitions for applications\n",
+    "{d}options": {
+      "{f}ReadMe.md": "This folder contains definitions for application options\n"
+    },
+    "{d}skins": {
+      "{f}ReadMe.md": "This folder contains definitions for application skins\n"
+    },
+    "{d}settings": {
+      "{f}ReadMe.md": "This folder contains definitions for application settings\n"
+    },
+    "{f}application.json": {
+      "name": "Default app",
+      "language": "eng",
+      "description": null
+    }
+  },
+  "{f}issues.json": [
+  ]
+}

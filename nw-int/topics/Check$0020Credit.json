@@ -1,0 +1,5 @@
+{
+  "name": "Check Credit",
+  "color": "#f4f316",
+  "summary": "CreditLimit > Balance (rollup of unshipped Order AmountTotals)"
+}

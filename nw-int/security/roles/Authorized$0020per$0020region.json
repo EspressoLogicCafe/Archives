@@ -1,0 +1,52 @@
+{
+  "name": "Authorized per region",
+  "description": "Click the Permissions tab.",
+  "defaultTablePermission": "A",
+  "defaultViewPermission": "R",
+  "defaultFunctionPermission": "X",
+  "globals": {
+  },
+  "apiVisibility": {
+    "table": {
+      "isRestricted": false,
+      "restrictedTo": null
+    },
+    "view": {
+      "isRestricted": false,
+      "restrictedTo": null
+    },
+    "resource": {
+      "isRestricted": false,
+      "restrictedTo": null
+    },
+    "procedure": {
+      "isRestricted": false,
+      "restrictedTo": null
+    },
+    "metatable": {
+      "isRestricted": false,
+      "restrictedTo": null
+    },
+    "function": {
+      "isRestricted": true,
+      "restrictedTo": [
+      ]
+    }
+  },
+  "entityPermission": {
+    "My Regions Customer": {
+      "entity": "nw:Customers",
+      "description": "Illustrates row-level security - see only customers in 'my' UserRegion.\n\nUserRegion defined in the Auth Tokens (for this example), or Users (in normal cases)",
+      "accessLevels": [
+        "ALL"
+      ],
+      "rowFilter": "\"Region\" = '@{UserRegion}'",
+      "columnFilter": {
+        "isRestricted": false,
+        "restrictedTo": null
+      }
+    }
+  },
+  "functionPermission": {
+  }
+}

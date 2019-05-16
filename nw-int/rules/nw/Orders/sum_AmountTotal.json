@@ -1,0 +1,17 @@
+{
+  "name": "sum_AmountTotal",
+  "entity": "Orders",
+  "isActive": true,
+  "ruleType": "sum",
+  "attribute": "AmountTotal",
+  "roleToChildren": "OrderDetails",
+  "childAttribute": "Amount",
+  "qualification": null,
+  "isJIT": false,
+  "isAutoTitle": true,
+  "title": "AmountTotal = sum(OrderDetails.Amount)",
+  "comments": "Adjust the AmountTotal to be the sum(Order$0020Details_List.Amount)\nObserve how simple rules chain to solve complex, multi-table transactions.",
+  "topics": [
+    "Check Credit"
+  ]
+}

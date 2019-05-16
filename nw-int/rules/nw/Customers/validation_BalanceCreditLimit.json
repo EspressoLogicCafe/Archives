@@ -1,0 +1,16 @@
+{
+  "name": "validation_BalanceCreditLimit",
+  "entity": "Customers",
+  "isActive": true,
+  "ruleType": "validation",
+  "codeType": "JavaScript",
+  "errorMessage": "Transaction cannot be completed - Balance ({Balance|#,##0.00}) exceeds Credit Limit ({CreditLimit|#,##0.00})",
+  "problemAttributes": [
+  ],
+  "isAutoTitle": false,
+  "title": "Validation: row.Balance <= row.CreditLimit",
+  "comments": "Observe Error message insertion points {}",
+  "topics": [
+    "Check Credit"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "NORTHWIND Integration",
+  "urlFragment": "nw-int",
+  "comments": "Simple integration demo - B2B order processing.\n\nTest with the REST Lab or Data Explorer; define Custom Resources, and explore Rules.",
+  "isEnabled": true,
+  "authProviderName": "Built-in authentication"
+}

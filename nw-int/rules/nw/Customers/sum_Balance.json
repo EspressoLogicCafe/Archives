@@ -1,0 +1,17 @@
+{
+  "name": "sum_Balance",
+  "entity": "Customers",
+  "isActive": true,
+  "ruleType": "sum",
+  "attribute": "Balance",
+  "roleToChildren": "Orders",
+  "childAttribute": "AmountTotal",
+  "qualification": "null === ShippedDate",
+  "isJIT": false,
+  "isAutoTitle": false,
+  "title": "Balance = sum(Orders.AmountTotal where unshipped)",
+  "comments": "adjust the balance to be the sum(Orders_List.AmountTotal) for unshipped orders\nAdjusts Balance by *reacting* to changes in Orders_List.AmountTotal,\nincluding other changes noted in Table/Column help.",
+  "topics": [
+    "Check Credit"
+  ]
+}

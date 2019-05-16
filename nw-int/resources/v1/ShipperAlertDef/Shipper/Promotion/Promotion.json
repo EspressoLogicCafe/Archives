@@ -1,0 +1,14 @@
+{
+  "name": "Promotion",
+  "description": null,
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "promos",
+  "entity": "promotions",
+  "join": "\"ident\" = [\"ShipperID\"]",
+  "isCollection": false,
+  "isCombined": false,
+  "filter": null,
+  "order": null,
+  "useSchemaAttributes": true
+}
