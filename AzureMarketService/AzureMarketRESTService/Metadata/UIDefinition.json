@@ -1,0 +1,60 @@
+﻿{
+    "markup": {
+		"reference": {
+			"bladeName": "CreateMicroserviceBlade",
+			"bladeExtension": "Microsoft_Azure_Microservices",
+			"partName": "MicroserviceDetailsPart",
+			"partExtension": "Microsoft_Azure_Microservices",
+			"partKeyId": "id"
+		}
+	},
+    "parameters": {
+        "EspressoService": {
+            "ServerName": {
+                "defaultValue": "your server name",
+                "displayName": "Espresso Logic ServerName",
+                "description": "This is the instance location where your Espresso Logic account is created",
+                "tooltip": "This is the instance location where your Espresso Logic account is created.",
+                "constraints": {
+                    "required": "true"
+                }
+            },
+            "AccountName": {
+                "defaultValue": "your account name",
+                "displayName": "Espresso Logic AccountName",
+                "description": "This is the account instance location where your Espresso Logic account is created it also includes the account and project information. ",
+                "tooltip": "This is the account instance location where your Espresso Logic account is created",
+                "constraints": {
+                    "required": "true"
+                }
+            },
+            "ProjectName": {
+                "defaultValue": "your project name",
+                "displayName": "Espresso Logic ProjectName",
+                "description": "This is the proejct name where your Espresso Logic account is created.",
+                "tooltip": "This is the project name where your Espresso Logic account is created",
+                "constraints": {
+                    "required": "true"
+                }
+            },
+            "DefaultAPIVersion": {
+                "defaultValue": "v1",
+                "displayName": "DefaultAPIVersion (do not change)",
+                "description": "DefaultAPIVersion v1",
+                "tooltip": "DefaultAPIVersion v1",
+                "constraints": {
+                    "required": "true"
+                }
+            },
+            "APIKey": {
+                "defaultValue": "enter api key",
+                "displayName": "API Key",
+                "description": "This is the API Key that grants specific access to this microservice account.",
+                "tooltip": "Enter the API Key for this specific microservice",
+                "constraints": {
+                    "required": "true"
+                }
+            }
+        }
+    }
+}

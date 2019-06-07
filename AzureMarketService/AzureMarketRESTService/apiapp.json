@@ -1,0 +1,34 @@
+﻿{
+    "$schema": "http://json-schema.org/schemas/2014-11-01/apiapp.json#",
+    "id": "EspressoAPIService",
+    "namespace": "espressologic.com",
+    "gateway": "2015-01-14",
+    "version": "0.0.12",
+    "title": "Espresso Logic REST API MicroService",
+    "summary": "A dynamic microservice that connects to your Espresso Logic REST Server",
+    "author": "Espresso Logic",
+    "categories": [
+        "enterprise"
+    ],
+    "homepage": "http://www.espressologi.com",
+    "endpoints": {
+        "apiDefinition": "/$metadata",
+        "status": "/status"
+    },
+    "tags": [  "apiapps", "apiapps-app-datasvc", "apiapps-pa","Espresso Logic", "REST Services" ],
+    "links": [
+        {
+             "text": "Home Page",
+             "url": "http://www.espressologic.com/declarative-api-app-creation-10x-faster/"
+        },
+        {
+            "text": "Documentation",
+            "url": "http://www.espressologic.com/resource-tag/documentation"
+        },
+        {
+            "text": "License Terms",
+            "url": "http://www.espressologic.com/terms-and-conditions/"
+        }
+    ],
+  "copyright": "Copyright 2015 Espresso Logic"
+}

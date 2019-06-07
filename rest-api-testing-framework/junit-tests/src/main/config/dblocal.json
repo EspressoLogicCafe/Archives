@@ -1,0 +1,53 @@
+{
+"accountUrl" : "el-local",
+"adminApiKey" : "apikey",
+
+// use with permissions to create databases, users and assign privs
+"dbaDatabaseUrl" : "jdbc:mysql://localhost:3306",
+"dbaDatabaseUser" : "sa",
+"dbaDatabasePassword" : "password!",
+
+// for the logic admin database
+"adminDatabaseUrl" : "jdbc:mysql://localhost:3306/dblocal_admin",
+"adminDatabaseSchema" : "dblocal_admin",
+"adminDatabaseUser" : "sa",
+"adminDatabasePassword" : "password!",
+"adminDatabaseEncryptedPassword" : "plaintext:sa!",
+"adminDatabaseEncryptedSalt" : "salt:plaintext",
+
+// for the demo data schema and data (eg customers, orders, ...)
+"demoDatabaseUrl" : "jdbc:mysql://localhost:3306/dblocal_demo",
+"demoDatabaseSchema" : "dbdev_demo",
+"demoDatabaseUser" : "sa",
+"demoDatabasePassword" : "password!",
+"demoDatabaseEncryptedPassword" : "plaintext:password!",
+"demoDatabaseEncryptedSalt" : "salt:plaintext",
+
+"sampleDatabaseUrl" : "jdbc:mysql://localhost:3306/dblocal_sample",
+"sampleDatabaseSchema" : "dblocal_sample",
+"sampleDatabaseUser" : "sa",
+"sampleDatabasePassword" : "password!",
+"sampleDatabaseEncryptedPassword" : "plaintext:password!",
+"sampleDatabaseEncryptedSalt" : "salt:plaintext",
+
+// sa password: Password0!saPasswordHash" : "2:fXEqE+9gwT1Qq3t94B230QPDarOK3aI/CPdZJc02XibmH4HTyhiNXKw==",
+"saPasswordSalt" : "PxuQvG12ZkTHp0beIYTYLE7ErwJYsX5dHy8zkd7U",
+
+
+"adminPassword" : "password2",
+"adminPasswordHash" : "E5SGhPcTVFC5py121cwxCiqsf5//MDU91sZ+6aZE/kkeRw05TgT6KY/UDiJdRuaj6Lfx54McpIx1j/562G8wfeDw==",
+"adminPasswordSalt" : "TaR6ptZREkX0Rqq3r5Rdd",
+
+
+"alphaPassword" : "password2",
+"alphaPasswordHash" : "E5SGhPcTVFC5py1cwxCiqsf5//MDU91sdfsZ+6aZE/kkeRw05TgT6KY/UDiJdRuaj6Lfx54McpIx1j/562G8wfeDw==",
+"alphaPasswordSalt" : "TaR6ptZREkX0Rqqsdfr5Rdd",
+
+// Auth Provider
+"authUrl" : "jdbc:mysql://localhost:3306/dblocal_admin",
+"authSchema" : "dblocal_admin",
+"authUser" : "sa",
+"authPassword" : "password!",
+"authEncryptedPassword" : "plaintext:passwrod!",
+"authEncryptedSalt" : "salt:plaintext"
+}

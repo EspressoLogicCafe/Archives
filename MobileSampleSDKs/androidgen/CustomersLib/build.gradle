@@ -1,0 +1,24 @@
+apply plugin: 'android-library'
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.1.0"
+
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 19
+        versionCode 1
+        versionName "1.0"
+    }
+	buildTypes {
+		release {
+			runProguard false
+		}    
+	}
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:+'
+    compile 'com.mashape.unirest:unirest-android:1.0.6'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.2.3'
+}
